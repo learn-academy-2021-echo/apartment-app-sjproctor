@@ -14,6 +14,6 @@ describe("When Header renders", () => {
   })
   it("displays an image", () => {
     const logo = shallow(<Header />)
-    expect(logo.find("img").prop("src")).toEqual(mockPic);
+    expect(logo.find("img").prop("src")).toEqual(mockPic)
   })
 })

@@ -1,11 +1,32 @@
 @import 'bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 
+/* ---APP LEVEL--- */
 * {
   margin: 0;
   padding: 0;
   font-family: 'Noto Sans KR', sans-serif;
+  text-align: center;
+}
+
+body {
   background-color: #F9F9FB;
+}
+
+main {
+  margin-top: 5vh;
+}
+
+button {
+  padding: 10px;
+  margin: 10px;
+  background-color: #4E2780;
+  color: #FFF;
+  border-radius: 10px;
+}
+button:hover {
+  background-color: #F9F9FB;
+  color: #4E2780;
 }
 
 /* ---HEADER--- */
@@ -13,9 +34,10 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  text-align: center;
 }
 .nav-bar {
-  display: flex;
+  width: 25%;
 }
 .nav-link {
   color: #4E2780;
@@ -34,4 +56,24 @@ header {
 .colored-doors {
   width: 100vw;
   margin-top: 20px;
+}
+
+/* ---INDEX--- */
+article {
+  margin-top: 5vh;
+}
+.address {
+  text-align: left;
+}
+.card {
+  box-shadow: inset 0 0 1px #000000;
+  padding: 30px 80px;
+}
+.cards {
+  display: flex;
+  justify-content: space-around;
+}
+.fa-icon {
+  font-size: 25px;
+  padding-right: 15px;
 }
