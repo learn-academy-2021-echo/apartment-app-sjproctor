@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
+import logo from '../assets/apartment-logo.png'
 
 class Header extends Component {
   render() {
@@ -9,14 +11,31 @@ class Header extends Component {
       sign_in_route,
       sign_out_route
     } = this.props
-    console.log("logged_in:", logged_in)
-    console.log("current_user:", current_user)
-    console.log("new_user_route:", new_user_route)
-    console.log("sign_in_route:", sign_in_route)
-    console.log("sign_out_route:", sign_out_route)
-    return(
-      <>
-      </>
+    return (
+      <header>
+        <div className="nav-bar">
+          <NavLink to="/apartmentindex" className="nav-link">
+            See All the Apartments
+          </NavLink>
+        </div>
+        <div className="nav-bar">
+          <NavLink to="/">
+            <img src={logo} alt="apartment app logo" className="logo"/>
+          </NavLink>
+        </div>
+        <div className="nav-bar">
+
+          {logged_in &&
+            <a href={sign_out_route} className="nav-link">Sign Out</a>
+          }
+          {!logged_in &&
+            <a href={sign_in_route} className="nav-link">Sign In</a>
+          }
+          {!logged_in &&
+            <a href={new_user_route} className="nav-link">Sign Up</a>
+          }
+        </div>
+      </header>
     )
   }
 }

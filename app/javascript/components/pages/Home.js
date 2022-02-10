@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
+import coloredDoors from '../assets/colorful-doors.jpeg'
 
 class Home extends Component {
   render() {
-    return(
+    return (
       <>
-        <h2>Home</h2>
+        <img
+          src={coloredDoors}
+          alt="series of colorful doors"
+          className="colored-doors"
+        />
       </>
     )
   }

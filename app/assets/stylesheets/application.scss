@@ -1,0 +1,37 @@
+@import 'bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+  background-color: #F9F9FB;
+}
+
+/* ---HEADER--- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.nav-bar {
+  display: flex;
+}
+.nav-link {
+  color: #4E2780;
+  font-size: 12px;
+}
+.nav-link:hover {
+  color: #4E2780;
+  text-decoration: underline;
+}
+.logo {
+  height: 110px;
+  cursor: pointer;
+}
+
+/* ---HOME--- */
+.colored-doors {
+  width: 100vw;
+  margin-top: 20px;
+}
