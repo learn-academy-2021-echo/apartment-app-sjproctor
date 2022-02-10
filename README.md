@@ -1,24 +1,70 @@
-# README
+# Apartment App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Setup
+- Added RSpec
+- Added React to Rails app
+- Added Devise
+- Added Reactstrap
+- Added React router
+- Added Enzyme
+- Routing constraints
 
-Things you may want to cover:
+Authorization vs Authentication
 
-* Ruby version
+- Authentication - providing the correct credentials (username and password)
+- Authorization - what you have access to with your credentials
 
-* System dependencies
+Devise Config
+- Installs
+- Generate User
+- Added the mailer
+- config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+- config/initializers/devise.rb
+```ruby
+# Find this line:
+config.sign_out_via = :delete
+# and replace it with this:
+config.sign_out_via = :get
+```
 
-* Configuration
+Apartments and Users
+- Added Apartment resource
+- User has_many apartments and Apartment belongs_to User
 
-* Database creation
+Mock Data
+- Added seed data to Rails app
+- Added mock apartments to React app
+- Added mock pic file for Enzyme
 
-* Database initialization
+Testing in a React in Rails App
+- $ yarn add jest
+- $ yarn add -D enzyme react-test-renderer enzyme-adapter-react-16
+- Add to the bottom of package.json
+```javascript
+"jest": {
+  "roots": [
+    "app/javascript/components"
+  ]
+}
+```
 
-* How to run the test suite
+Story: nav
+- Added Routing to Home and Index in React
+- Added picture and styling to Home
+- Added test coverage to Home
+- Added logo and styling to Header
+- Added test coverage Header
 
-* Services (job queues, cache servers, search engines, etc.)
+Story: index
+- Passed mock data into the ApartmentIndex component
+- Styled cards and added Font Awesome icons
+- Added test coverage to ApartmentIndex
 
-* Deployment instructions
-
-* ...
+Added Font Awesome Icons
+- $ yarn add @fortawesome/fontawesome-svg-core
+- $ yarn add @fortawesome/free-solid-svg-icons
+- $ yarn add @fortawesome/react-fontawesome
+- `import { faHome, faCity } from "@fortawesome/free-solid-svg-icons"`
+- `import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"`
+- In JSX: <FontAwesomeIcon icon={faHome} />
+- In JSX: <FontAwesomeIcon icon={faCity} />
