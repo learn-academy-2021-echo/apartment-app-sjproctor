@@ -7,15 +7,15 @@ class ApartmentNew extends Component {
     super(props)
     this.state = {
       newApartment: {
-        street: "",
-        city: "",
-        state: "",
-        manager: "",
-        email: "",
-        price: "",
-        bedrooms: "",
-        bathrooms: "",
-        pets: "",
+        street: "101 Market Street",
+        city: "San Diego",
+        state: "CA",
+        manager: "Bob",
+        email: "bob@bob.com",
+        price: "2000",
+        bedrooms: "2",
+        bathrooms: "2",
+        pets: "yes",
         user_id: this.props.current_user ? this.props.current_user.id : ""
       },
       submitted: false
@@ -109,18 +109,18 @@ class ApartmentNew extends Component {
             </Label>
             <Input
               name="bedrooms"
-              type="text"
+              type="number"
               onChange={this.handleChange}
               value={this.state.newApartment.bedrooms}
             />
           </FormGroup>
           <FormGroup>
             <Label for="bathrooms">
-              Bedrooms
+              Bathrooms
             </Label>
             <Input
               name="bathrooms"
-              type="text"
+              type="number"
               onChange={this.handleChange}
               value={this.state.newApartment.bathrooms}
             />

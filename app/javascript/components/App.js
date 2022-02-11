@@ -12,18 +12,39 @@ import {
   Switch
 } from 'react-router-dom'
 
-import apartments from './mockData.js'
-
 class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      apartments: apartments
+      apartments: []
     }
   }
 
+  componentDidMount(){
+    this.readApartment()
+  }
+  readApartment = () => {
+    fetch("/apartments")
+    .then(response => response.json())
+    .then(payload => this.setState({apartments: payload}))
+    .catch(errors => console.log("index errors:", errors))
+  }
   createApartment = (newApartment) => {
-    console.log(newApartment)
+    fetch("/apartments", {
+      body: JSON.stringify(newApartment),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "POST"
+    })
+    .then(response => {
+      if(response.status === 422){
+        alert("There is something wrong with your submission.")
+      }
+      return response.json()
+    })
+    .then(() => this.readApartment())
+    .catch(errors => console.log("create errors:", errors))
   }
 
   render() {

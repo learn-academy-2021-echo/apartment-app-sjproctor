@@ -98,3 +98,9 @@ Story: Controller Methods and Specs with Validations
 - Added model specs for validations
 - Adding controller methods for index and create with strong params
 - Added validations for presence
+
+Story: Fetch Requests
+- Adds fetch for index action
+- Removed mock data import
+- Added `skip_before_action :verify_authenticity_token` to ApplicationController
+- Added fetch request for create
