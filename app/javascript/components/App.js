@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import Header from './components/Header'
 import Home from './pages/Home'
 import ApartmentIndex from './pages/ApartmentIndex'
+import ApartmentProtectedIndex from './pages/ApartmentProtectedIndex'
 import ApartmentShow from './pages/ApartmentShow'
+import ApartmentNew from './pages/ApartmentNew'
 
 import {
   BrowserRouter as  Router,
@@ -19,6 +21,11 @@ class App extends Component {
       apartments: apartments
     }
   }
+
+  createApartment = (newApartment) => {
+    console.log(newApartment)
+  }
+
   render() {
     const {
       logged_in,
@@ -41,10 +48,32 @@ class App extends Component {
             path="/apartmentshow/:id"
             render={(props) => {
               let id = +props.match.params.id
-              let apartment = this.state.apartments.find(apt => apt.id === id)
+              let apartment = apartments.find(apt => apt.id === id)
               return <ApartmentShow apartment={apartment} />
             }}
           />
+          {logged_in &&
+            <Route
+              path="/myapartments"
+              render={(props) => {
+                let myApartments = apartments.filter(apt => apt.user_id === current_user.id)
+                return <ApartmentProtectedIndex apartments={myApartments} />
+              }}
+            />
+          }
+          {logged_in &&
+            <Route
+              path="/apartmentnew"
+              render={(props) => {
+                return(
+                  <ApartmentNew
+                    current_user={current_user} createApartment={this.createApartment}
+                  />
+                )
+              }}
+            />
+          }
+
         </Switch>
       </Router>
     )

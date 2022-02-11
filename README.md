@@ -55,7 +55,7 @@ Story: nav
 - Added logo and styling to Header
 - Added test coverage Header
 
-Story: index
+Story: Index
 - Passed mock data into the ApartmentIndex component
 - Styled cards and added Font Awesome icons
 - Added test coverage to ApartmentIndex
@@ -71,8 +71,22 @@ Added Font Awesome Icons
 - In JSX: <FontAwesomeIcon icon={faCity} />
 
 
-Story: show
+Story: Show
 - Added route to show by pulling id from params
 - Added card with all the data
 - Added test coverage to ApartmentIndex
 - Still using mock data for apartments
+
+Story: Protected Index
+- Used code from index and show to create the protected index
+- Create a conditionally rendered link
+- Create a conditionally rendered route that filters the apartment array for apartments that match the current user id
+
+Story: Create
+- Added form fields
+- Added a state object to collect the data from the forms with an onChange
+- Added a submit action and redirect to protected index
+- Added a conditionally rendered link
+- Added a conditionally rendered route that passes the create method and the current user id
+- Add test coverage
+- Still using mock data
