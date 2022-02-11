@@ -59,6 +59,7 @@ Story: index
 - Passed mock data into the ApartmentIndex component
 - Styled cards and added Font Awesome icons
 - Added test coverage to ApartmentIndex
+- Still using mock data for apartments
 
 Added Font Awesome Icons
 - $ yarn add @fortawesome/fontawesome-svg-core
@@ -68,3 +69,10 @@ Added Font Awesome Icons
 - `import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"`
 - In JSX: <FontAwesomeIcon icon={faHome} />
 - In JSX: <FontAwesomeIcon icon={faCity} />
+
+
+Story: show
+- Added route to show by pulling id from params
+- Added card with all the data
+- Added test coverage to ApartmentIndex
+- Still using mock data for apartments
