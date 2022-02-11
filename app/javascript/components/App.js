@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Header from './components/Header'
 import Home from './pages/Home'
 import ApartmentIndex from './pages/ApartmentIndex'
+import ApartmentShow from './pages/ApartmentShow'
 
 import {
   BrowserRouter as  Router,
@@ -35,6 +36,14 @@ class App extends Component {
           <Route
             path="/apartmentindex"
             render={(props) => <ApartmentIndex apartments={apartments} />}
+          />
+          <Route
+            path="/apartmentshow/:id"
+            render={(props) => {
+              let id = +props.match.params.id
+              let apartment = this.state.apartments.find(apt => apt.id === id)
+              return <ApartmentShow apartment={apartment} />
+            }}
           />
         </Switch>
       </Router>
