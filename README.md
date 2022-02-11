@@ -83,3 +83,10 @@ Story: Protected Index
 - Create a conditionally rendered route that filters the apartment array for apartments that match the current user id
 
 Story: Create
+- Added form fields
+- Added a state object to collect the data from the forms with an onChange
+- Added a submit action and redirect to protected index
+- Added a conditionally rendered link
+- Added a conditionally rendered route that passes the create method and the current user id
+- Add test coverage
+- Still using mock data

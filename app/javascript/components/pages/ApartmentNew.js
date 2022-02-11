@@ -16,7 +16,7 @@ class ApartmentNew extends Component {
         bedrooms: "",
         bathrooms: "",
         pets: "",
-        user_id: this.props.current_user.id
+        user_id: this.props.current_user ? this.props.current_user.id : ""
       },
       submitted: false
     }
@@ -34,7 +34,8 @@ class ApartmentNew extends Component {
 
   render() {
     return(
-      <>
+      <main>
+        <h3>Add a New Apartment</h3>
         <Form>
           <FormGroup>
             <Label for="street">
@@ -143,7 +144,7 @@ class ApartmentNew extends Component {
           Add a New Apartment
         </button>
         {this.state.submitted && <Redirect to="/myapartments"/>}
-      </>
+      </main>
     )
   }
 }
