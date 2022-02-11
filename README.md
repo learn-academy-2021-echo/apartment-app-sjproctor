@@ -90,3 +90,11 @@ Story: Create
 - Added a conditionally rendered route that passes the create method and the current user id
 - Add test coverage
 - Still using mock data
+
+Story: Controller Methods and Specs with Validations
+- Add request specs
+- Created a global user in the request spec
+- Added request specs for validations
+- Added model specs for validations
+- Adding controller methods for index and create with strong params
+- Added validations for presence
